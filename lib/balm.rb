@@ -5,36 +5,36 @@ require_relative "balm/version"
 module Balm
   class Error < StandardError; end
 
-  # this class will output random trope
-  class Trope
-    def self.romance
+  # this class will generate aspects of a story: trope, archetype and setting
+  class Plot
+    def self.trope
       @tropes = []
       File.readlines("lib/balm/romance-tropes.txt").each { |trope|
         @tropes << trope.strip
       }
       puts @tropes.sample(1)
     end
-  end
 
-  # this class will out put of character types based on input
-  class Archetype
-    def self.character(num)
+    def self.archetype(num)
       @archetypes = []
       File.readlines("lib/balm/archetypes.txt").each { |archetype| @archetypes << archetype.strip }
-      puts @archetypes.sample(num)
+      puts @archetypes.sample(num).join(", ")
     end
-  end
 
-  # this class will out put a setting time and place
-  class Setting
-    def self.where?
+    def self.setting
       @settings = []
       File.readlines("lib/balm/settings.txt").each { |setting|
         @settings << setting.strip
       }
+      puts @settings.sample
+    end
+
+    def all(num)
+      puts "#{@archetypes.sample(num)}."
     end
   end
 end
 
-Balm::Trope.romance
-Balm::Archetype.character(2)
+Balm::Plot.trope
+Balm::Plot.archetype(4)
+Balm::Plot.setting

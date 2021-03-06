@@ -68,3 +68,26 @@ Bluestocking
 Courtesan
 Scientist
 Adventurer
+Vampire
+Werewolf
+Ghost
+Ghoul
+Orc
+Mermaid
+Siren
+Gumiho
+God 
+Goddess 
+Minor God
+Minor Goddess
+Demi God
+Demi Deity
+Deity 
+Demi Goddess
+Nymph
+Crusader
+Conqueror
+Explorer
+Phantom
+Exiled Monarch 
+Fae

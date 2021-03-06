@@ -22,7 +22,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+require 'balm'
+
+Balm::Plot.trope #=> "Arranged Marriage"
+Balm::Plot.archetype(4) #=> "Minor God, Curate, Bard, Ghost"
+Balm::Plot.setting #=>
+
 
 ## Development
 
