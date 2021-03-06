@@ -26,7 +26,10 @@ require 'balm'
 
 Balm::Plot.trope #=> "Arranged Marriage"
 Balm::Plot.archetype(4) #=> "Minor God, Curate, Bard, Ghost"
-Balm::Plot.setting #=>
+Balm::Plot.setting #=> "The ruins of a Castle"
+Balm::Plot.all(3) #=> "Mage, Princess, Dandy
+                        One is a Celebrity and the other is not
+                        The city just before dawn"
 
 
 ## Development
