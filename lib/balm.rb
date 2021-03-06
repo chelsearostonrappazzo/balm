@@ -4,5 +4,22 @@ require_relative "balm/version"
 
 module Balm
   class Error < StandardError; end
-  # Your code goes here...
+
+  # this class will output random trope
+  class Trope
+    def initialize
+      filename = "tropes.txt"
+      @tropes = []
+      File.readlines(filename).each do |trope|
+        @tropes << trope.strip
+      end
+    end
+
+    def self.romance
+      puts @tropes.sample(1)
+    end
+  end
 end
+
+Balm::Trope.new
+Balm::Trope.romance

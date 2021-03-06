@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = %q{"The purpose of this gem is to generate random plots for those creatively blocked."}
   spec.description = %q{"It has the ability to generate character names, romance tropes and plot points. It will focus on romance and potentially branch out to other genres."}
-  spec.homepage = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage = "https://github.com/chelsearostonrappazzo/balm"
   spec.license = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
 
