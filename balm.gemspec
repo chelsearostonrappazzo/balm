@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Chelsea Roston"]
   spec.email = ["cmroston@gmail.com"]
 
-  spec.summary = "The purpose of this gem is to generate random plots for those creatively blocked."
-  spec.description = "It has the ability to generate character names, romance tropes and plot points. It will focus on romance and potentially branch out to other genres."
+  spec.summary = %q{"The purpose of this gem is to generate random plots for those creatively blocked."}
+  spec.description = %q{"It has the ability to generate character names, romance tropes and plot points. It will focus on romance and potentially branch out to other genres."}
   spec.homepage = "https://github.com/chelsearostonrappazzo/balm"
   spec.license = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
@@ -17,8 +17,8 @@ Gem::Specification.new do |spec|
   spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = "https://github.com/chelsearostonrappazzo/balm"
+  spec.metadata["changelog_uri"] = "Put your gem's CHANGELOG.md URL here."
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
