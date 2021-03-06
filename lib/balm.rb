@@ -33,12 +33,13 @@ module Balm
       end
 
       def all(num)
+        puts "~Characters~"
         archetype(num)
+        puts "~Trope~"
         trope
+        puts "~Setting~"
         setting
       end
     end
   end
 end
-
-Balm::Plot.all(3)
