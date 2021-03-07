@@ -10,25 +10,25 @@ module Balm
     class << self
       def trope
         tropes = []
-        File.readlines("lib/balm/romance-tropes.txt").each { |trope|
+        File.readlines("lib/balm/romance-tropes.txt").each do |trope|
           tropes << trope.strip
-        }
+        end
         puts tropes.sample(1)
       end
 
       def archetype(num)
         archetypes = []
-        File.readlines("lib/balm/archetypes.txt").each { |archetype|
+        File.readlines("lib/balm/archetypes.txt").each do |archetype|
           archetypes << archetype.strip
-        }
+        end
         puts archetypes.sample(num).join(", ")
       end
 
       def setting
         settings = []
-        File.readlines("lib/balm/settings.txt").each { |setting|
+        File.readlines("lib/balm/settings.txt").each do |setting|
           settings << setting.strip
-        }
+        end
         puts settings.sample
       end
 
