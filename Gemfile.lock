@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    balm (0.1.2)
+    balm (0.2.2)
 
 GEM
   remote: https://rubygems.org/
