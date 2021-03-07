@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require "balm"
 
 RSpec.describe Balm do
   it "has a version number" do
