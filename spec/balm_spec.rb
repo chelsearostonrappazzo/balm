@@ -6,7 +6,7 @@ RSpec.describe Balm do
     expect(Balm::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
-  end
+  # it "populates a trope" do
+  #   expect(Balm::Plot.trope).to eq(true)
+  # end
 end
