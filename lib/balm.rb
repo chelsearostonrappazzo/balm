@@ -10,7 +10,7 @@ module Balm
     class << self
       def trope
         tropes = []
-        File.readlines("lib/balm/romance-tropes.txt").each do |trope|
+        File.readlines("bin/romance-tropes.txt").each do |trope|
           tropes << trope.strip
         end
         puts tropes.sample(1)
@@ -18,7 +18,7 @@ module Balm
 
       def archetype(num)
         archetypes = []
-        File.readlines("lib/balm/archetypes.txt").each do |archetype|
+        File.readlines("bin/archetypes.txt").each do |archetype|
           archetypes << archetype.strip
         end
         puts archetypes.sample(num).join(", ")
@@ -26,7 +26,7 @@ module Balm
 
       def setting
         settings = []
-        File.readlines("lib/balm/settings.txt").each do |setting|
+        File.readlines("bin/settings.txt").each do |setting|
           settings << setting.strip
         end
         puts settings.sample
