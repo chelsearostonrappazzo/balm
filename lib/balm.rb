@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "balm/version"
+require "yaml"
 
 module Balm
   class Error < StandardError; end
@@ -10,25 +11,28 @@ module Balm
     class << self
       def trope
         tropes = []
-        File.readlines("bin/romance-tropes.txt").each do |trope|
-          tropes << trope.strip
-        end
-        puts tropes.sample(1)
+        trope_data = YAML.load_file("lib/tropes.yaml")
+        trope_data.each { |trope| tropes << trope.strip }
+        puts tropes.sample
       end
 
       def archetype(num)
         archetypes = []
-        File.readlines("bin/archetypes.txt").each do |archetype|
-          archetypes << archetype.strip
+        archetype_data = YAML.load_file("lib/archetypes.yaml")
+        archetype_data.each { |archetype| archetypes << archetype.strip }
+        if (1..5).include?(num)
+          puts archetypes.sample(num).join(", ")
+        elsif num < 1
+          puts archetypes.sample(1)
+        else
+          puts archetypes.sample(5).join(", ")
         end
-        puts archetypes.sample(num).join(", ")
       end
 
       def setting
         settings = []
-        File.readlines("bin/settings.txt").each do |setting|
-          settings << setting.strip
-        end
+        setting_data = YAML.load_file("lib/settings.yaml")
+        setting_data.each { |setting| settings << setting.strip }
         puts settings.sample
       end
 
