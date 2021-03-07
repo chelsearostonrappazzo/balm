@@ -12,29 +12,31 @@ module Balm
       def trope
         trope_data = File.join(File.dirname(__FILE__), "tropes.yaml")
         tropes = []
-        YAML.load_file(trope_data).each { |trope|
+        YAML.load_file(trope_data).each do |trope|
           tropes << trope.strip
-        }
+        end
         puts tropes.sample
       end
 
       def archetype(num)
         archetypes = []
-        archetype_data = YAML.load_file("lib/archetypes.yaml")
-        archetype_data.each { |archetype| archetypes << archetype.strip }
+        archetype_data = File.join(File.dirname(__FILE__), "archetypes.yaml")
+        YAML.load_file(archetype_data).each do |archetype|
+          archetypes << archetype.strip
+        end
         if (1..5).include?(num)
           puts archetypes.sample(num).join(", ")
-        elsif num < 1
-          puts archetypes.sample(1)
-        else
+        elsif num > 5
           puts archetypes.sample(5).join(", ")
         end
       end
 
       def setting
+        setting_data = File.join(File.dirname(__FILE__), "settings.yaml")
         settings = []
-        setting_data = YAML.load_file("lib/settings.yaml")
-        setting_data.each { |setting| settings << setting.strip }
+        YAML.load_file(setting_data).each do |setting|
+          settings << setting.strip
+        end
         puts settings.sample
       end
 
@@ -49,5 +51,3 @@ module Balm
     end
   end
 end
-
-Balm::Plot.trope
