@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require "balm"
 
 RSpec.describe Balm do
@@ -7,6 +8,6 @@ RSpec.describe Balm do
   end
 
   # it "populates a trope" do
-  #   expect(Balm::Plot.trope).to eq(true)
+  #   expect(Balm::Plot.archetype).to eq(true)
   # end
 end
