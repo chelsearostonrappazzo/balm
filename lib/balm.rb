@@ -10,9 +10,11 @@ module Balm
   class Plot
     class << self
       def trope
+        trope_data = File.join(File.dirname(__FILE__), "tropes.yaml")
         tropes = []
-        trope_data = YAML.load_file("lib/tropes.yaml")
-        trope_data.each { |trope| tropes << trope.strip }
+        YAML.load_file(trope_data).each { |trope|
+          tropes << trope.strip
+        }
         puts tropes.sample
       end
 
@@ -47,3 +49,5 @@ module Balm
     end
   end
 end
+
+Balm::Plot.trope
