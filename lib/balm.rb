@@ -31,7 +31,7 @@ module Balm
         elsif num >= 3
           archetypes_list = archetypes.sample(num)
           archetypes_list[-1] = "and " + archetypes_list[-1] 
-          archetypes_list.join(", ")
+          archetypes_list.join(" , ")
         end
       end
 
