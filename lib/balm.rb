@@ -15,7 +15,7 @@ module Balm
         YAML.load_file(trope_data).each do |trope|
           tropes << trope.strip
         end
-        puts tropes.sample
+        return tropes.sample
       end
 
       def archetype(num)
@@ -24,10 +24,14 @@ module Balm
         YAML.load_file(archetype_data).each do |archetype|
           archetypes << archetype.strip
         end
-        if (1..5).include?(num)
-          puts archetypes.sample(num).join(", ")
-        elsif num > 5
-          puts archetypes.sample(5).join(", ")
+        if num === 1
+          return archetypes.sample(num)
+        elsif num === 2
+          return archetypes.sample(num).join(" and ")
+        elsif num >= 3
+          archetypes_list = archetypes.sample(num)
+          archetypes_list[-1] = "and " + archetypes_list[-1] 
+          return archetypes_list.join(", ")
         end
       end
 
@@ -37,16 +41,11 @@ module Balm
         YAML.load_file(setting_data).each do |setting|
           settings << setting.strip
         end
-        puts settings.sample
+        return settings.sample
       end
 
       def all(num)
-        puts "~Characters~"
-        archetype(num)
-        puts "~Trope~"
-        trope
-        puts "~Setting~"
-        setting
+          return "Once upon a time, a #{archetype(num)} in a #{setting} and #{trope} happens. Have you found your path?"
       end
     end
   end
