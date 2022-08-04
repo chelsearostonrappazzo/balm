@@ -45,7 +45,7 @@ module Balm
       end
 
       def all(num)
-          "Once upon a time, a #{archetype(num)} in a #{setting} and #{trope} happens. Have you found your path?"
+          "Once upon a time, a #{archetype(num)} in #{setting} and #{trope} happens. Have you found your path?"
       end
     end
   end
