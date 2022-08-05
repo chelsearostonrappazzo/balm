@@ -31,7 +31,7 @@ module Balm
         elsif num >= 3
           archetypes_list = archetypes.sample(num)
           archetypes_list[-1] = "and " + archetypes_list[-1] 
-          archetypes_list.join(" , ")
+          archetypes_list.join(", ")
         end
       end
 
@@ -44,8 +44,27 @@ module Balm
         settings.sample
       end
 
-      def all(num)
-          "Once upon a time, a #{archetype(num)} in #{setting} and #{trope} happens. Have you found your path?"
+      def all(num, type = "list")
+        if type === "prompt"
+          if trope.downcase.end_with?("!")
+            if setting.downcase.start_with?(/[io]+/)
+              puts "Once upon a time, a #{archetype(num)} are #{setting.downcase} and #{trope.downcase} Have you found your path?"
+            else
+              puts "Once upon a time, a #{archetype(num)} are in #{setting.downcase} and #{trope.downcase} Have you found your path?"
+            end
+          else
+            if setting.downcase.start_with?(/[io]+/)
+              puts "Once upon a time, a #{archetype(num)} are #{setting.downcase} and #{trope.downcase}. Have you found your path?"
+            elsif setting.downcase.start_with?("as")
+              puts "Once upon a time, a #{archetype(num)} #{setting.downcase} and #{trope.downcase}. Have you found your path?"
+            else
+              puts "Once upon a time, a #{archetype(num)} are in #{setting.downcase} and #{trope.downcase}. Have you found your path?"
+            end
+          end
+        else
+          prompt_list = { trope: trope, archetypes: archetype(num), setting: setting }
+          puts prompt_list
+        end
       end
     end
   end
