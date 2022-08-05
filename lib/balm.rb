@@ -48,22 +48,22 @@ module Balm
         if type === "prompt"
           if trope.downcase.end_with?("!")
             if setting.downcase.start_with?(/[io]+/)
-              puts "Once upon a time, a #{archetype(num)} are #{setting.downcase} and #{trope.downcase} Have you found your path?"
+              "Once upon a time, a #{archetype(num)} are #{setting.downcase} and #{trope.downcase} Have you found your path?"
             else
-              puts "Once upon a time, a #{archetype(num)} are in #{setting.downcase} and #{trope.downcase} Have you found your path?"
+              "Once upon a time, a #{archetype(num)} are in #{setting.downcase} and #{trope.downcase} Have you found your path?"
             end
           else
             if setting.downcase.start_with?(/[io]+/)
-              puts "Once upon a time, a #{archetype(num)} are #{setting.downcase} and #{trope.downcase}. Have you found your path?"
+              "Once upon a time, a #{archetype(num)} are #{setting.downcase} and #{trope.downcase}. Have you found your path?"
             elsif setting.downcase.start_with?("as")
-              puts "Once upon a time, a #{archetype(num)} #{setting.downcase} and #{trope.downcase}. Have you found your path?"
+              "Once upon a time, a #{archetype(num)} #{setting.downcase} and #{trope.downcase}. Have you found your path?"
             else
-              puts "Once upon a time, a #{archetype(num)} are in #{setting.downcase} and #{trope.downcase}. Have you found your path?"
+              "Once upon a time, a #{archetype(num)} are in #{setting.downcase} and #{trope.downcase}. Have you found your path?"
             end
           end
         else
           prompt_list = { trope: trope, archetypes: archetype(num), setting: setting }
-          puts prompt_list
+          prompt_list
         end
       end
     end
