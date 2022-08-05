@@ -25,7 +25,7 @@ module Balm
           archetypes << archetype.strip
         end
         if num === 1
-          archetypes.sample(num)
+          archetypes.sample(num)[0]
         elsif num === 2
           archetypes.sample(num).join(" and ")
         elsif num >= 3
